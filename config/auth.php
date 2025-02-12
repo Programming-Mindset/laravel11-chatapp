@@ -12,12 +12,12 @@ return [
     | as required, but they're a perfect start for most applications.
     |
     */
-
+    //grepper laravel guard definition
     'defaults' => [
         'guard' => env('AUTH_GUARD', 'web'),
         'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
     ],
-
+    //end grepper
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
