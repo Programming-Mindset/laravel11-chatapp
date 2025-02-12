@@ -24,3 +24,5 @@ php artisan migrate
 <pre>
 php artisan install:broadcasting
 </pre>
+
+Full blog is available at [programmingmindset.com](https://programmingmindset.com/post/laravel-11-chat-app-using-reverb-broadcasting-event)
