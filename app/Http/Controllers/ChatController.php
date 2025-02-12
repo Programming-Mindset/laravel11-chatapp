@@ -11,7 +11,7 @@ class ChatController extends Controller
 {
     public function index()
     {
-        return view('chat.index', ['messages' => Message::with('user')->latest()->get()]);
+        return view('dashboard', ['messages' => Message::with('user')->latest()->get()]);
     }
 
     public function sendMessage(Request $request)

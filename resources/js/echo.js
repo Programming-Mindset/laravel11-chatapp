@@ -1,6 +1,5 @@
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
-import { io } from 'socket.io-client';
 
 window.Pusher = Pusher;
 
@@ -18,11 +17,11 @@ const userId = document.body.getAttribute('data-user-id');
 
 // Listen for incoming messages via Echo
 window.Echo.channel("chat-channel")
-    .listen(".message.sent", function(event) {
-        console.log(event)
-        const messagesDiv = $("#messages");
+    .listen(".message.sent", function (event) {
+        const messagesDiv = $("#messageDiv");
         if (event.message.user_id !== userId) {
-            messagesDiv.append(`<p><strong>${event.message.user.name}:</strong> ${event.message.message} <span style="font-size:10px">${formatDate(event.message.created_at)}</span></p>`);
+            const colorClass = event.message.user_id !== userId ? 'text-green-600' : 'text-blue-600';
+            messagesDiv.append(`<p><strong class="${colorClass}">${event.message.user.name}:</strong> ${event.message.message} <span style="font-size:10px">${formatDate(event.message.created_at)}</span></p>`);
         }
     });
 
