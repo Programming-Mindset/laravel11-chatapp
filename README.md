@@ -12,6 +12,7 @@ Listen for Messages in Real-Time
 <pre>
 composer create-project laravel/laravel chat-app
 cd chat-app
+cp .env.example .env
 </pre>
 
 <pre>
